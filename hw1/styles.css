@@ -100,13 +100,9 @@ ul {
 .hero-banner {
   min-height: 500px;
   background: 
-  /* 1. 왼쪽 글자 가독성을 위해 왼쪽만 살짝 어둡게 (to right) */
-  linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%),
-  /* 2. 하단 콘텐츠 섹션과 자연스럽게 이어지도록 아래만 어둡게 (to bottom) */
-  linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(20, 20, 20, 1) 100%),
-  /* 3. 메인 이미지 */
-  url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop') center/cover;
-  background-attachment: fixed;
+    linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.9) 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(20, 20, 20, 0.9)),
+    url('https://images.unsplash.com/photo-1574267432644-f74f8ec55d1f?w=1920&h=1080&fit=crop') center/cover;
   background-attachment: fixed;
   display: flex;
   align-items: center;
@@ -183,35 +179,23 @@ ul {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
-  gap: 10px;
+  gap: 5px;
   padding-bottom: 10px;
   scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* 스크롤바 스타일링 */
 .content-row::-webkit-scrollbar {
-  height: 8px;
-}
-
-.content-row::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.content-row::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 4px;
-}
-
-.content-row::-webkit-scrollbar-thumb:hover {
-  background: #777;
+  display: none;
 }
 
 /* ===== 콘텐츠 카드 스타일 ===== */
 .content-card {
-  flex: 0 0 calc((100% - 50px) / 6);  /* 한 줄에 6개 카드 */
-  min-width: 200px;  /* 최소 너비 보장 */
-  background-color: #2f2f2f;
-  border-radius: 8px;
+  flex: 0 0 calc((100% - 25px) / 6);
+  min-width: 180px;
+  background-color: transparent;
+  border-radius: 4px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -224,35 +208,28 @@ ul {
 
 .card-image {
   width: 100%;
-  aspect-ratio: 2 / 3;  /* 넷플릭스 포스터 비율 (세로가 긴 형태) */
+  aspect-ratio: 2 / 3;
   background-color: #1a1a1a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
+  border-radius: 4px;
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* 이미지 비율 유지하며 영역 채우기 */
+  object-fit: cover;
 }
 
 .card-info {
-  padding: 15px;
+  padding: 8px 0;
+  background-color: transparent;
 }
 
 .card-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #ffffff;
-}
-
-.card-description {
   font-size: 14px;
-  color: #b3b3b3;
-  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 0;
+  color: #e5e5e5;
 }
 
 /* ===== 푸터 스타일 ===== */
