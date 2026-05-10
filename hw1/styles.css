@@ -99,8 +99,11 @@ ul {
 /* ===== Hero 배너 스타일 ===== */
 .hero-banner {
   min-height: 500px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(20, 20, 20, 0.9)),
-              url('hero-background.jpg') center/cover;
+  background: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.9) 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(20, 20, 20, 0.9)),
+    url('https://images.unsplash.com/photo-1574267432644-f74f8ec55d1f?w=1920&h=1080&fit=crop') center/cover;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   padding: 80px 40px;
