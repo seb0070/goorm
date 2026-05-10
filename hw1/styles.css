@@ -173,21 +173,46 @@ ul {
 }
 
 .content-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 10px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+/* 스크롤바 스타일링 */
+.content-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.content-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content-row::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.content-row::-webkit-scrollbar-thumb:hover {
+  background: #777;
 }
 
 /* ===== 콘텐츠 카드 스타일 ===== */
 .content-card {
+  flex: 0 0 calc((100% - 50px) / 6);  /* 한 줄에 6개 카드 */
+  min-width: 200px;  /* 최소 너비 보장 */
   background-color: #2f2f2f;
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .content-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  z-index: 10;
 }
 
 .card-image {
@@ -318,9 +343,9 @@ ul {
     font-size: 16px;
   }
 
-  .content-row {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+  .content-card {
+    flex: 0 0 calc((100% - 30px) / 3);  /* 모바일에서는 3개씩 */
+    min-width: 150px;
   }
 
   .footer-links {
