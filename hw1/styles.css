@@ -100,9 +100,13 @@ ul {
 .hero-banner {
   min-height: 500px;
   background: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.9) 100%),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(20, 20, 20, 0.9)),
-    url('https://images.unsplash.com/photo-1574267432644-f74f8ec55d1f?w=1920&h=1080&fit=crop') center/cover;
+  /* 1. 왼쪽 글자 가독성을 위해 왼쪽만 살짝 어둡게 (to right) */
+  linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%),
+  /* 2. 하단 콘텐츠 섹션과 자연스럽게 이어지도록 아래만 어둡게 (to bottom) */
+  linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(20, 20, 20, 1) 100%),
+  /* 3. 메인 이미지 */
+  url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop') center/cover;
+  background-attachment: fixed;
   background-attachment: fixed;
   display: flex;
   align-items: center;
